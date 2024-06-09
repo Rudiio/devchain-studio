@@ -1,0 +1,67 @@
+{
+  "name": "devchain-studio",
+  "displayName": "Devchain-studio",
+  "description": "DevChain-studio is a supercharged AI coding assistant that helps you build software by providing code and documents to help understand the approach that was adopted by the AI to build it.",
+  "icon": "public/DevChain_icon.png",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.88.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "package-explorer",
+          "title": "Package Explorer",
+          "icon": "$(heart)"
+        }
+      ]
+    },
+    "views": {
+      "package-explorer": [
+          {
+              "id": "package-dependencies",
+              "name": "Dependencies"
+          },
+          {
+              "id": "package-outline",
+              "name": "Outline"
+          }
+      ]
+    },
+    "commands": [
+      {
+        "command": "devchain-studio.dev",
+        "title": "Devchain-studio: Start Dev"
+      }
+    ]
+
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.88.0",
+    "@typescript-eslint/eslint-plugin": "^7.4.0",
+    "@typescript-eslint/parser": "^7.4.0",
+    "@vscode/test-cli": "^0.0.8",
+    "@vscode/test-electron": "^2.3.9",
+    "eslint": "^8.57.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@vscode/codicons": "^0.0.35"
+  }
+}
